@@ -1,0 +1,16 @@
+<canvas id="c" width="640" height="480">
+<script>
+	c=document.getElementById('c').getContext('2d')
+	a=0
+	setInterval(function() {
+		c.fillRect(0,0,640,480)
+		for(i=0;i<480;i++)
+		for(j=0;j<4;){
+			c.strokeStyle='rgb(99,'+99*j+',9)'
+			x=Math.sin(i/500+a+1.6*j)*99+300
+			y=Math.sin(i/500+a+1.6*++j)*99+300
+			if(y>x)c.strokeRect(x,i,y-x,i)
+		}
+		a++
+	})
+</script>
